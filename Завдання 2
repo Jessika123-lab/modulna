@@ -1,0 +1,10 @@
+let str = prompt()
+let arr = str.split(' ')
+let counter = 0
+for(let i = 0; i < arr.length ; i++){
+    let el = arr[i].toLowerCase()
+    if(el[0] == el[el.length-1]){
+        counter++
+    }
+}
+console.log('Кількість слів з одинаковими першими та останніми буквами : ' + counter)
