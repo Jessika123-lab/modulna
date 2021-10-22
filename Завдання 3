@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+  function getRandNums(){
+        let rand = Math.floor(Math.random()*11)
+    }
+function getRandOp(){
+    let op = ['+' , '-' , '*', '/']
+     return op[Math.floor(Math.random()*4)]
+}
+function MyBtnClick(){
+        const inp1 = document.getElementById('first_number')
+        const inp2 = document.getElementById('second_number')
+        const answ = document.getElementById('answer')
+        const res = document.getElementsByClassName('result')
+        const randOp = getRandOp()
+        inp1.value = getRandNums()
+        inp2.value = getRandNums()
+        let answer = parseInt(res)
+        switch(randOp){
+            case '+': 
+                if(answer == inp1.value + inp2.value)
+                    res.InnerText = "Ok"
+                else
+                res.InnerText = "incorrect"
+            break
+        }
+</script>
+<body>
+    <label>
+        First number
+        <input type="text" id="first_number">
+    </label>
+    <label>
+        Operation
+        <input type="text" id="operation">
+    </label>
+    <label>
+        Second number
+        <input type="text" id="second_number">
+    </label>
+    <hr/>
+    <label>
+        Your answer: 
+        <input type="text" id="answer">
+    </label>
+    <button id="myBtn">Check</button>
+    <div class="result">
+        result : 
+    </div>
+</body>
+</html>
